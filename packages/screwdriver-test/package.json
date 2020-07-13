@@ -1,6 +1,6 @@
 {
   "name": "screwdriver-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "> TODO: description",
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "https://github.com/screwdriver-js/screwdriver#readme",
@@ -25,9 +25,9 @@
   },
   "type": "module",
   "dependencies": {
-    "screwdriver": "^0.0.1",
     "@types/jest": "^26.0.4",
     "jest": "^26.1.0",
+    "screwdriver": "^0.0.2",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
   }
