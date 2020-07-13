@@ -5,7 +5,7 @@
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "https://github.com/screwdriver-js/screwdriver#readme",
   "license": "ISC",
-  "main": "lib/screwdriver-test.js",
+  "main": "__tests__/index.test.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -27,8 +27,9 @@
   "dependencies": {
     "@types/jest": "^26.0.4",
     "jest": "^26.1.0",
-    "screwdriver": "^0.0.2",
+    "screwdriver-js": "^0.0.2",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
-  }
+  },
+  "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
 }
