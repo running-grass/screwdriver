@@ -1,0 +1,22 @@
+{
+  "name": "screwdriver-number",
+  "version": "0.0.1",
+  "description": "screwdriver 的处理数字的库",
+  "keywords": [
+    "number"
+  ],
+  "author": "奔跑的小草 <running-grass@foxmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/screwdriver-number.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
