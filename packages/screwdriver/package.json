@@ -8,7 +8,7 @@
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/screwdriver.js",
+  "main": "src/index.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
@@ -17,13 +17,10 @@
     "lib"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "exit 0"
   },
   "type": "module",
   "devDependencies": {
-    "@types/jest": "^26.0.4",
-    "jest": "^26.1.0",
-    "ts-jest": "^26.1.1",
     "typescript": "^3.9.6"
   }
 }
