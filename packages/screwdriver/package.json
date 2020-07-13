@@ -1,14 +1,14 @@
 {
-  "name": "screwdriver-number",
+  "name": "screwdriver",
   "version": "0.0.1",
-  "description": "screwdriver 的处理数字的库",
+  "description": "screwdriver",
   "keywords": [
     "number"
   ],
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/screwdriver-number.js",
+  "main": "lib/screwdriver.js",
   "directories": {
     "lib": "lib",
     "test": "test"
