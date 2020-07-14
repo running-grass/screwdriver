@@ -2,26 +2,13 @@
   "name": "screwdriver-js",
   "version": "0.0.1",
   "description": "screwdriver",
-  "keywords": [
-    "number"
-  ],
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "",
   "license": "ISC",
   "main": "src/index.ts",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "test": "exit 0"
   },
   "type": "module",
-  "devDependencies": {
-    "typescript": "^3.9.6"
-  },
   "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
 }
