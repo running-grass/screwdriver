@@ -1,6 +1,6 @@
 {
   "name": "screwdriver-test",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "> TODO: description",
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "https://github.com/screwdriver-js/screwdriver#readme",
@@ -24,7 +24,7 @@
   },
   "type": "module",
   "dependencies": {
-    "screwdriver-js": "^0.0.1"
+    "screwdriver-js": "^0.0.2-alpha.0"
   },
   "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
 }
