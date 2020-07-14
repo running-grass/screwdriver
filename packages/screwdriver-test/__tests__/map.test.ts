@@ -1,5 +1,4 @@
 import * as sd from 'screwdriver-js'
-import { List } from 'screwdriver-js/src/data-structure/List';
 
 
 test("test map for array", () => {
