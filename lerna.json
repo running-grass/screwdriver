@@ -2,5 +2,15 @@
   "packages": [
     "packages/*"
   ],
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "*.md",
+        "**/test/**"
+      ],
+      "message": "chore(release): publish"
+    }
+  },
   "version": "0.0.1"
 }

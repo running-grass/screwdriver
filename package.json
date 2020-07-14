@@ -1,8 +1,14 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "screwdriver",
+  "private": false,
   "devDependencies": {
+    "cz-conventional-changelog": "^3.2.0",
     "lerna": "^3.22.1"
   },
-  "type": "module"
+  "type": "module",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
