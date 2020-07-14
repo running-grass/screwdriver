@@ -1,11 +1,9 @@
-# `screwdriver-number`
+# `screwdriver-js`
 
-> TODO: description
+> 一个js的函数库
 
 ## Usage
 
 ```
-const screwdriverNumber = require('screwdriver-number');
-
-// TODO: DEMONSTRATE API
+yarn add screwdriver-js
 ```
