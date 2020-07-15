@@ -1,4 +1,3 @@
-import AbstractList from "../data-structure/AbstractList";
 import Functor from "./Functor";
 import Mapper from "./Mapper";
 
@@ -6,7 +5,7 @@ export interface Nested<A> {
     flatten(): Nested<A>;
 }
 
-type Nest<A> = Nested<A | Nested<A>>
+export type Nest<A> = Nested<A | Nested<A>>
 
 // interface Nesting<A extends Nested<A>> {
 //     flatten(): Nest<A>;
