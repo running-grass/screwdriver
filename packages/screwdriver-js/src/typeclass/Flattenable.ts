@@ -28,30 +28,3 @@ export function flatten<A>(fa: Flattenable<A>) {
 }
 
 // ----------------- 为原生对象提供实现 ------------------
-
-// ------------- Array ------------- 
-declare global {
-  /**
-   * Array for Fattenable
-   * @template T 
-   */
-  interface Array<T> extends Flattenable<T> {
-    flatten(): Array<T>;
-  }
-}
-
-// 附加函数
-Array.prototype.flatten = function <A>(): Array<A> {
-  const res = [];
-  for (const item of this) {
-    if (item instanceof Array) {
-      for (const it2 of item.flatten()) {
-        res.push(it2)
-      }
-    } else {
-      res.push(item)
-    }
-
-  }
-  return res;
-};

@@ -1,9 +1,12 @@
-export { default as add } from './add';
+import './naitve';
+
+export {
+  default as add
+} from './add';
 
 export {
   flatten,
   Flattenable,
-  // Nested,
 } from './typeclass/Flattenable';
 
 export {
@@ -20,7 +23,6 @@ export {
 
 export {
   Maybe,
-
   just,
   nothing,
 } from './type/Maybe'
