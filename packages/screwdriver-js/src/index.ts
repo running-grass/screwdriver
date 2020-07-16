@@ -2,9 +2,9 @@ export { default as add } from './add';
 
 export {
   flatten,
-  Nest,
-  Nested,
-} from './typeclass/Nest';
+  Flattenable,
+  // Nested,
+} from './typeclass/Flattenable';
 
 export {
   map,

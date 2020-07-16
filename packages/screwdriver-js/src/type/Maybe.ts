@@ -1,6 +1,7 @@
-import { Functor, Mapper, Nested, Nest } from "..";
+import { Functor, Mapper, Flattenable } from "..";
 
-export abstract class Maybe<A> implements Functor<A>, Nested<A>, Nest<A> {
+
+export abstract class Maybe<A> implements Functor<A>, Flattenable<A> {
   abstract flatten(): Maybe<A>;
   abstract isJust: boolean;
   abstract isNothing: boolean;

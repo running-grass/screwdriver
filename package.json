@@ -2,7 +2,8 @@
   "name": "screwdriver",
   "private": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "doc": "typedoc"
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
