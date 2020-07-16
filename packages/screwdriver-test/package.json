@@ -5,13 +5,6 @@
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "https://github.com/screwdriver-js/screwdriver#readme",
   "license": "ISC",
-  "main": "__tests__/index.test.ts",
-  "directories": {
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/screwdriver-js/screwdriver.git"

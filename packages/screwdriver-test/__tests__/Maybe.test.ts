@@ -1,4 +1,4 @@
-import { Maybe, just, nothing } from "screwdriver-js/src/fantasy/Nest"
+import { Maybe, just, nothing } from "screwdriver-js";
 
 
 test("test maybe new", () => {
