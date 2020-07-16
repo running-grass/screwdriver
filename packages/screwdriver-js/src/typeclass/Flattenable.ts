@@ -3,10 +3,13 @@ import { Functor } from "..";
 /**
  * 可以把自嵌套的结构压平
  * 
- * @category 自定义
  * @template A 
+ * @category 类型类
  */
 export interface Flattenable<A> extends Functor<A>{
+  /** 
+   * @category Self
+   */
   flatten(): Flattenable<A>;
 }
 

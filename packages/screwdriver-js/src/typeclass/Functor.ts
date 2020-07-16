@@ -1,20 +1,13 @@
 import { Mapper } from "..";
 
 /**
- * Functor最通用的函数命名
- * @template A 
- * @category 类型类
- */
-export interface CommonFunctor<A> {
-  map<B>(mapper: Mapper<A, B>): Functor<B>;
-}
-
-/**
  * Fantasy functor
- * @template A 
  * @category Fantasy-Land
  */
 export interface FantasyFunctor<A> {
+  /**
+   * @category Fantasy-Land
+   */
   'fantasy-land/map'<B>(mapper: Mapper<A, B>): Functor<B>;
 }
 
@@ -25,17 +18,15 @@ export interface FantasyFunctor<A> {
  * @template A 
  * @category 类型类
  */
-export interface Functor<A> extends
-  CommonFunctor<A>,
-  FantasyFunctor<A> {
+export interface Functor<A> extends FantasyFunctor<A> {
+  /**
+   * @category Self
+   */
+  map<B>(mapper: Mapper<A, B>): Functor<B>;
 }
 
 
 /**
- * map
- * @param mapper 函数 a -> b
- * @param fa 
- * 
  * @category 常用函数
  */
 export function map<A, B>(mapper: Mapper<A, B>, fa: Functor<A>): Functor<B> {

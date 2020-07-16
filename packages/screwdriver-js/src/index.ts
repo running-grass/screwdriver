@@ -14,8 +14,13 @@ export {
   Functor,
 } from './typeclass/Functor';
 
+export {
+  Apply,
+  ap,
+} from './typeclass/Apply'
 
-// 类
+
+// ----------------- 类 -------------------
 
 export {
   Mapper,
