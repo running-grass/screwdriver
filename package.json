@@ -10,6 +10,7 @@
     "lerna": "^3.22.1",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
+    "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
   },
   "type": "module",
