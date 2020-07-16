@@ -1,4 +1,4 @@
-import Functor from "./Functor";
+import { Functor } from "..";
 
 /**
  * 可以把自嵌套的结构压平
@@ -26,5 +26,3 @@ export interface Flattenable<A> extends Functor<A>{
 export function flatten<A>(fa: Flattenable<A>) {
   return fa.flatten();
 }
-
-// ----------------- 为原生对象提供实现 ------------------
