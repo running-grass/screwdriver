@@ -1,5 +1,4 @@
-import Collection from "./Collection";
-import Mapper from "../fantasy/Mapper";
+import { Collection, Mapper } from "..";
 
 export interface Linked<A> extends Collection<A> {
     getHead(): SingleLinkedNode<A>;

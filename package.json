@@ -18,9 +18,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {},
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
-  }
+  "dependencies": {}
 }
