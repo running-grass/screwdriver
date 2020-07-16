@@ -8,7 +8,6 @@ import { Functor } from "..";
  */
 export interface Flattenable<A> extends Functor<A>{
   /** 
-   * @category Self
    */
   flatten(): Flattenable<A>;
 }

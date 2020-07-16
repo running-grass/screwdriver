@@ -18,7 +18,11 @@ export interface FantasyApply<A> {
  */
 export interface Apply<A> extends Functor<A>, FantasyApply<A> {
   /**
-   * @category Self
+   * map的升级版
+   * 
+   * 映射函数是被包装起来的
+   * 
+   * @param fmapper 给定一个映射函数，然后用Apply包装起来
    */
   ap<B>(fmapper: Apply<Mapper<A, B>>): Apply<B>
 }

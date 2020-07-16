@@ -20,7 +20,7 @@ export interface FantasyFunctor<A> {
  */
 export interface Functor<A> extends FantasyFunctor<A> {
   /**
-   * @category Self
+   * 提供一个映射函数，把容器内的全部数据都转为另外一种状态
    */
   map<B>(mapper: Mapper<A, B>): Functor<B>;
 }

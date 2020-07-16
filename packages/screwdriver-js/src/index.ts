@@ -28,6 +28,7 @@ export {
 
 export {
   Maybe,
+  maybe,
   just,
   nothing,
 } from './type/Maybe'
