@@ -1,9 +1,9 @@
-import { Maybe, just, nothing } from "screwdriver-js";
+import { Maybe, just, nothing, maybe } from "screwdriver-js";
 
 
 test("test maybe new", () => {
-  const m1 = Maybe.of('3');
-  const m2 = Maybe.of(null);
+  const m1 = maybe('3');
+  const m2 = maybe(null);
 
   expect(m1).toEqual(just('3'))
   expect(m2).toEqual(nothing())
@@ -11,20 +11,20 @@ test("test maybe new", () => {
 
 
 test("test maybe for map", () => {
-  const m1 = Maybe.of(3);
-  const m2 = Maybe.of(null);
+  const m1 = maybe(3);
+  const m2 = maybe(null);
 
   expect(m1.map(a => a + 1)).toEqual(just(4))
   expect(m2.map(a => a + 1)).toEqual(nothing())
 })
 
 test("test maybe for nest", () => {
-  const m1 = Maybe.of(3);
-  const m2 = Maybe.of(m1);
+  const m1 = maybe(3);
+  const m2 = maybe(m1);
 
 
-  const m3 = Maybe.of(null);
-  const m4 = Maybe.of(m3);
+  const m3 = maybe(null);
+  const m4 = maybe(m3);
 
   expect(m2.flatten()).toEqual(just(3))
   expect(m4.flatten()).toEqual(nothing())

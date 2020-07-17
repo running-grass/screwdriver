@@ -1,4 +1,41 @@
-import { map } from "screwdriver-js";
+import { map, Mapper, maybe } from "screwdriver-js";
+
+const id: Mapper<any, any> = a => a;
+
+describe.each([
+  [1],
+  [null],
+  [undefined],
+  [100],
+  [2000],
+  [30000],
+  [-200],
+  [-1],
+  [0],
+])("test Functor laws by Maybe number (Maybe %p)", (maybeValue) => {
+  const mb = maybe(maybeValue);
+
+  test("for identity", () => {
+    expect(mb.map(id)).toEqual(mb)
+  })
+
+  describe.each([
+    [a => a + 2],
+    [a => a - 2],
+    [a => a * 2],
+    [a => a / 2],
+  ])("for compositions", (f) => {
+    test.each([
+      [a => a + 20],
+      [a => a - 20],
+      [a => a * 20],
+      [a => a / 20],
+    ])("for composition (%#)", (g) => {
+      expect(mb.map(x => f(g(x)))).toEqual(mb.map(g).map(f))
+    })
+  })
+})
+
 
 test("test map for array", () => {
   let array = [1, 2, 3];
