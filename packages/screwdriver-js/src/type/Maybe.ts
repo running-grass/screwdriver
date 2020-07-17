@@ -41,7 +41,7 @@ export abstract class Maybe<A> implements
     return this.of(a)
   }
   static of<T>(a: T): Maybe<T> {
-    return a == null ? Nothing.of() : Just.of(a);
+    return a == null || a == undefined ? Nothing.of() : Just.of(a);
   }
   static 'fantasy-land/of'<T>(a: T): Maybe<T> {
     return Maybe.of(a);
@@ -87,11 +87,16 @@ export class Just<A> extends Maybe<A> {
     return this;
   }
   map<B>(mapper: Mapper<A, B>): Maybe<B> {
-    return new Just(mapper(this._value));
+    return Maybe.of(mapper(this._value));
   }
 
-  ap<B>(fmapper: Just<Mapper<A, B>>): Just<B> {
-    return new Just(fmapper._value(this._value));
+  ap<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B> {
+    if (fmapper.isNothing) {
+      return Nothing.of();
+    } 
+
+    const justMapper = fmapper as Just<Mapper<A, B>>;
+    return Maybe.of(justMapper._value(this._value));
   }
 }
 
