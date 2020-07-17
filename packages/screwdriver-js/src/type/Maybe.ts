@@ -23,6 +23,16 @@ export interface Maybe<A> extends
    * 是否是Nothing
    */
   isNothing: boolean;
+
+  // --------------- extends
+  // Functor
+  map<B>(mapper: Mapper<A, B>): Maybe<B>;
+  'fantasy-land/map'<B>(mapper: Mapper<A, B>): Maybe<B>;
+  // Apply
+  ap<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B>;
+  'fantasy-land/ap'<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B>;
+  // Flattenable
+  flatten(): Maybe<A>;
 }
 
 

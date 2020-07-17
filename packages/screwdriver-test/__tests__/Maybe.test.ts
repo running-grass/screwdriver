@@ -29,12 +29,3 @@ test("test maybe for nest", () => {
   expect(m2.flatten()).toEqual(just(3))
   expect(m4.flatten()).toEqual(nothing())
 })
-
-test("test maybe for apply", () => {
-  const m1 = nothing();
-  const m2 = just(2);
-
-  const f = just(a => a + 1)
-  expect(m1.ap(f)).toEqual(nothing());
-  expect(m2.ap(f)).toEqual(just(3));
-})
