@@ -19,6 +19,10 @@ export {
   ap,
 } from './typeclass/Apply'
 
+export {
+  Applicative,
+} from './typeclass/Applicative'
+
 
 // ----------------- 类 -------------------
 

@@ -1,6 +1,4 @@
-import { Functor, Mapper, Flattenable, Apply } from "..";
-
-
+import { Functor, Mapper, Flattenable, Apply, Applicative } from "..";
 
 /**
  * Maybe代表一种可能性，可有可无
@@ -11,36 +9,53 @@ import { Functor, Mapper, Flattenable, Apply } from "..";
  * 
  * @category 数据类型
  */
-export interface Maybe<A> extends
+export abstract class Maybe<A> implements
   Functor<A>,
   Apply<A>,
+  Applicative<A>,
   Flattenable<A> {
   /**
    * 是否是Just
    */
-  isJust: boolean;
+  readonly isJust: boolean;
   /**
    * 是否是Nothing
    */
-  isNothing: boolean;
+  readonly isNothing: boolean;
 
   // --------------- extends
   // Functor
-  map<B>(mapper: Mapper<A, B>): Maybe<B>;
-  'fantasy-land/map'<B>(mapper: Mapper<A, B>): Maybe<B>;
+  abstract map<B>(mapper: Mapper<A, B>): Maybe<B>;
+  'fantasy-land/map'<B>(mapper: Mapper<A, B>): Maybe<B> {
+    return this.map(mapper);
+  }
   // Apply
-  ap<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B>;
-  'fantasy-land/ap'<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B>;
-  // Flattenable
-  flatten(): Maybe<A>;
-}
+  abstract ap<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B>;
+  'fantasy-land/ap'<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B> {
 
+    return this.ap(fmapper);
+  };
+  // Applicative
+  abstract of(a: A): Maybe<A>
+  'fantasy-land/of'(a: A): Maybe<A> {
+    return this.of(a)
+  }
+  static of<T>(a: T): Maybe<T> {
+    return a == null ? Nothing.of() : Just.of(a);
+  }
+  static 'fantasy-land/of'<T>(a: T): Maybe<T> {
+    return Maybe.of(a);
+  }
+
+  // Flattenable
+  abstract flatten(): Maybe<A>;
+}
 
 /**
  * Just是有值的一种Maybe状态
  * @category 数据类型构造器
  */
-export class Just<A> implements Maybe<A> {
+export class Just<A> extends Maybe<A> {
   isJust: boolean = true;
   isNothing: boolean = false;
   /**
@@ -49,7 +64,18 @@ export class Just<A> implements Maybe<A> {
   private _value: A;
 
   constructor(a: A) {
+    super()
     this._value = a;
+  }
+
+  of(a: A): Just<A> {
+    return new Just(a);
+  }
+  static of<B>(x: B): Just<B> {
+    return new Just(x);
+  }
+  static 'fantasy-land/of'<B>(x: B): Just<B> {
+    return Just.of(x);
   }
 
   flatten(): Maybe<A> {
@@ -63,29 +89,17 @@ export class Just<A> implements Maybe<A> {
   map<B>(mapper: Mapper<A, B>): Maybe<B> {
     return new Just(mapper(this._value));
   }
-  'fantasy-land/map'<B>(mapper: Mapper<A, B>): Maybe<B> {
-    return this.map(mapper);
-  }
 
   ap<B>(fmapper: Just<Mapper<A, B>>): Just<B> {
     return new Just(fmapper._value(this._value));
   }
-
-  'fantasy-land/ap'<B>(fmapper: Just<Mapper<A, B>>): Just<B> {
-    return this.ap(fmapper)
-  }
-
-  static of<B>(x: B): Just<B> {
-    return new Just(x);
-  }
-
 }
 
 /**
  * Nothing是Maybe的没有值得状态
  * @category 数据类型构造器
  */
-export class Nothing<A> implements Maybe<A> {
+export class Nothing<A> extends Maybe<A> {
   isJust: boolean = false;
   isNothing: boolean = true;
 
@@ -95,30 +109,29 @@ export class Nothing<A> implements Maybe<A> {
   private static _nothing = new Nothing<any>();
 
   private constructor() {
+    super()
   }
 
-  static of<B>(): Nothing<B> {
-    return this._nothing;
+
+  of(a: A): Nothing<A> {
+    return Nothing._nothing;
+  }
+  static of<B>(b?: B): Nothing<B> {
+    return Nothing._nothing;
+  }
+  static 'fantasy-land/of'<B>(b?: B): Nothing<B> {
+    return Nothing.of(b);
   }
 
-  flatten(): Maybe<A> {
+  flatten(): Nothing<A> {
     return Nothing._nothing;
   }
 
-  map<B>(mapper: Mapper<A, B>): Maybe<B> {
-    return Nothing._nothing;
-  }
-
-
-  'fantasy-land/map'<B>(mapper: Mapper<A, B>): Maybe<B> {
+  map<B>(mapper: Mapper<A, B>): Nothing<B> {
     return Nothing._nothing;
   }
 
   ap<B>(fmapper: Nothing<Mapper<A, B>>): Nothing<B> {
-    return Nothing._nothing;
-  }
-
-  'fantasy-land/ap'<B>(fmapper: Nothing<Mapper<A, B>>): Nothing<B> {
     return Nothing._nothing;
   }
 
@@ -129,19 +142,17 @@ export class Nothing<A> implements Maybe<A> {
  * Just的构造函数
  * @category 类型构造函数
  */
-export const just = Just.of.bind(Just);
+export const just = Just.of;
 
 /**
  * Nothing的构造函数 
  * @category 类型构造函数
  */
-export const nothing = Nothing.of.bind(Nothing);
+export const nothing = Nothing.of;
 
 
 /**
  * 自动判断的Maybe构造函数
  * @category 类型构造函数
  */
-export function maybe<A>(a: A): Maybe<A> {
-  return a == null ? Nothing.of() : new Just(a);
-}
+export const maybe = Maybe.of;
