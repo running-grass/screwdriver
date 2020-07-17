@@ -6,6 +6,6 @@
  * 
  * @category 函数类型
  */
-export interface Mapper<A, B> {
+export interface Mapper<A, B> extends Function{
     (a: A): B;
 };

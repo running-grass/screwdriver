@@ -7,6 +7,7 @@ import {
   id,
   compose,
   map,
+  Reducer,
 } from "..";
 
 // 定义接口
@@ -20,6 +21,7 @@ declare global {
     'fantasy-land/map'<B>(mapper: Mapper<T, B>): Array<B>;
     map<B>(mapper: Mapper<T, B>): Array<B>;
     flatten(): Array<T>;
+    reduce<B>(reducer: Reducer<B, T>, initVal: B): B;
   }
 
   interface Function extends Semigroupoid<any, any>, Category<any> {

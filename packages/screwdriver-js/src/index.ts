@@ -48,11 +48,20 @@ export {
   invert,
 } from './typeclass/Group'
 
+export {
+  Foldable,
+  reduce,
+} from './typeclass/Foldable'
+
 // ----------------- 类 -------------------
 
 export {
   Mapper,
 } from './type/Mapper'
+
+export {
+  Reducer,
+} from './type/Reducer'
 
 export {
   Maybe,

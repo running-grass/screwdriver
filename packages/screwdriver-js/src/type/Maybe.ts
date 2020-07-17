@@ -6,6 +6,8 @@ import {
   Applicative,
   Semigroup,
   Monoid,
+  Foldable,
+  Reducer,
 } from "..";
 
 /**
@@ -23,6 +25,7 @@ export abstract class Maybe<A> implements
   Applicative<A>,
   Semigroup<A>,
   Monoid<A>,
+  Foldable<A>,
   Flattenable<A> {
   /**
    * 是否是Just
@@ -80,7 +83,11 @@ export abstract class Maybe<A> implements
     return Nothing.of()
   }
 
-
+  // Foldable
+  abstract reduce<B>(reducer: Reducer<B, A>, initVal: B): B;
+  'fantasy-land/reduce'<B>(reducer: Reducer<B, A>, initVal: B): B {
+    return this.reduce(reducer, initVal);
+  }
 }
 
 /**
@@ -135,10 +142,14 @@ export class Just<A> extends Maybe<A> {
       return this;
     }
 
-    const that  = (mb as Just<A>)._value;
+    const that = (mb as Just<A>)._value;
     // TODO 可能会报错
     return (this._value as any).concat(that);
   }
+  reduce<B>(reducer: Reducer<B, A>, initVal: B): B {
+    return reducer(initVal, this._value);
+  }
+
 }
 
 /**
@@ -185,6 +196,9 @@ export class Nothing<A> extends Maybe<A> {
     return Nothing._nothing;
   }
 
+  reduce<B>(reducer: Reducer<B, A>, initVal: B): B {
+    return initVal;
+  }
 }
 
 
