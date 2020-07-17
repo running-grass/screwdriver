@@ -23,6 +23,16 @@ export {
   Applicative,
 } from './typeclass/Applicative'
 
+export { 
+  Semigroupoid,
+  compose,
+} from './typeclass/Semigroupoid'
+
+export {
+  Category,
+  id,
+} from './typeclass/Category'
+
 
 // ----------------- 类 -------------------
 

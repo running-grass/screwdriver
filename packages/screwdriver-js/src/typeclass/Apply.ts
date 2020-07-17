@@ -1,8 +1,6 @@
-import { Functor, FantasyFunctor } from "./Functor";
-import { Mapper } from "..";
+import { Mapper, Functor } from "..";
 
 /**
- * Fantasy Apply
  * @category Fantasy-Land
  */
 export interface FantasyApply<A> {
