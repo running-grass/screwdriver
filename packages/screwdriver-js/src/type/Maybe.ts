@@ -1,4 +1,12 @@
-import { Functor, Mapper, Flattenable, Apply, Applicative } from "..";
+import {
+  Functor,
+  Mapper,
+  Flattenable,
+  Apply,
+  Applicative,
+  Semigroup,
+  Monoid,
+} from "..";
 
 /**
  * Maybe代表一种可能性，可有可无
@@ -13,6 +21,8 @@ export abstract class Maybe<A> implements
   Functor<A>,
   Apply<A>,
   Applicative<A>,
+  Semigroup<A>,
+  Monoid<A>,
   Flattenable<A> {
   /**
    * 是否是Just
@@ -49,6 +59,28 @@ export abstract class Maybe<A> implements
 
   // Flattenable
   abstract flatten(): Maybe<A>;
+
+  // Semigroup
+  abstract concat(mb: Maybe<A>): Maybe<A>;
+  'fantasy-land/concat'(mb: Maybe<A>): Maybe<A> {
+    return this.concat(mb);
+  }
+
+  // Monoid
+  static empty<B>(): Maybe<B> {
+    return Nothing.of()
+  }
+  static 'fantasy-land/empty'<B>(): Maybe<B> {
+    return Nothing.of()
+  }
+  empty(): Maybe<A> {
+    return Nothing.of()
+  }
+  'fantasy-land/empty'(): Maybe<A> {
+    return Nothing.of()
+  }
+
+
 }
 
 /**
@@ -93,10 +125,19 @@ export class Just<A> extends Maybe<A> {
   ap<B>(fmapper: Maybe<Mapper<A, B>>): Maybe<B> {
     if (fmapper.isNothing) {
       return Nothing.of();
-    } 
+    }
 
     const justMapper = fmapper as Just<Mapper<A, B>>;
     return Maybe.of(justMapper._value(this._value));
+  }
+  concat(mb: Maybe<A>): Maybe<A> {
+    if (mb.isNothing) {
+      return this;
+    }
+
+    const that  = (mb as Just<A>)._value;
+    // TODO 可能会报错
+    return (this._value as any).concat(that);
   }
 }
 
@@ -140,7 +181,12 @@ export class Nothing<A> extends Maybe<A> {
     return Nothing._nothing;
   }
 
+  concat(mb: Maybe<A>): Maybe<A> {
+    return Nothing._nothing;
+  }
+
 }
+
 
 
 /**
