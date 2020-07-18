@@ -7,10 +7,14 @@ export {
 } from './add';
 
 export {
-  xwrap,
-  xmap,
   transduce,
-} from './type/Transformer'
+} from './transducer/transduce'
+export {
+  xmap,
+} from './transducer/XMap';
+export {
+  xwrap,
+} from './transducer/XWrap';
 
 export {
   flatten,
