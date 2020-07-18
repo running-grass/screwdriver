@@ -1,6 +1,6 @@
 import { Reducer, Mapper } from "..";
 import { id } from "../typeclass/Category";
-import { Provider } from "./Provider";
+import { Provider } from "../type/Provider";
 import { Transformer } from "./Transformer";
 // type xfOrFn<A, B> = XBase<A, B> | Reducer<A, B>
 /**

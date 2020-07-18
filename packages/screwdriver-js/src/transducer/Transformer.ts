@@ -1,5 +1,5 @@
 import { Reducer, Mapper } from "..";
-import { Provider } from "./Provider";
+import { Provider } from "../type/Provider";
 
 export interface Transformer<A, C> {
   '@@transducer/init': Provider<C>;

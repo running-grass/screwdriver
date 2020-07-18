@@ -10,11 +10,17 @@ export {
   transduce,
 } from './transducer/transduce'
 export {
-  xmap,
-} from './transducer/XMap';
+  Transformer,
+} from './transducer/Transformer'
 export {
   xwrap,
 } from './transducer/XWrap';
+export {
+  xmap,
+} from './transducer/XMap';
+export {
+  xfilter
+} from './transducer/XFilter'
 
 export {
   flatten,
