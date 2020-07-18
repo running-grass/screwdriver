@@ -21,7 +21,8 @@ export interface Semigroupoid<A, B> extends FantasySemigroupoid<A, B> {
  * 可以提供函数的组合
  * @category 常用函数
  */
-export function compose<A, B, C>(f: Semigroupoid<B, C>, ...fns: Semigroupoid<any, any>[]): Semigroupoid<A, C> {
+// export function compose<A, B, C>(f: Semigroupoid<B, C>, ...fns: Semigroupoid<any, any>[]): Semigroupoid<A, C> {
+export function compose(f: any, ...fns: any[]): any {
   const fnLen = fns.length;
   if (fnLen === 0) {
     throw new Error("compose的参数至少为两个");

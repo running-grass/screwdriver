@@ -5,7 +5,7 @@ import { Transducer } from "./Transducer";
 
 export class XFilter<A, C> extends XBase<A, A, C> {
   readonly predicate: Predicate<A>;
-  '@@transducer/step': Reducer<A, C> = (acc: C, item: A): C => {
+  '@@transducer/step' = (acc: C, item: A) => {
     return (this.predicate(item))
       ? this.xf["@@transducer/step"](acc, item)
       : acc;

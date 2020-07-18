@@ -2,10 +2,11 @@ import { Reducer, Mapper } from "..";
 import { id } from "../typeclass/Category";
 import { Provider } from "../type/Provider";
 import { Transformer } from "./Transformer";
+import { XReduced } from "./XReduced";
 
 export abstract class XBase<A, B, C> implements Transformer<A, C> {
   xf: Transformer<B, C>;
-  abstract '@@transducer/step': Reducer<A, C>;
+  abstract '@@transducer/step': Reducer<A, C | XReduced<C>>;
 
   '@@transducer/result': Mapper<any, any> = id;
   '@@transducer/init': Provider<any> = () => {

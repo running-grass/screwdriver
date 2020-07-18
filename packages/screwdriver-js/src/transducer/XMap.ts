@@ -2,11 +2,12 @@ import { Reducer, Mapper } from "..";
 import { Transducer } from "./Transducer";
 import { Transformer } from "./Transformer";
 import { XBase } from "./XBase";
+import { XReduced } from "./XReduced";
 
 
 export class XMap<A, B, C> extends XBase<A, B, C> {
   readonly mapper: Mapper<A, B>;
-  '@@transducer/step': Reducer<A, C> = (acc: C, item: A): C => {
+  '@@transducer/step' = (acc: C, item: A) => {
     return this.xf["@@transducer/step"](acc, this.mapper(item));
   };
 
