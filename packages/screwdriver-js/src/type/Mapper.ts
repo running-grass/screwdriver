@@ -1,6 +1,8 @@
 /**
  * 简单的映射函数
  * 
+ * 从类型A转换到类型B
+ * 
  * @template A 
  * @template B 
  * 

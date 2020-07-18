@@ -30,11 +30,11 @@ export abstract class Maybe<A> implements
   /**
    * 是否是Just
    */
-  readonly isJust: boolean;
+  readonly abstract isJust: boolean;
   /**
    * 是否是Nothing
    */
-  readonly isNothing: boolean;
+  readonly abstract isNothing: boolean;
 
   // --------------- extends
   // Functor
@@ -84,8 +84,8 @@ export abstract class Maybe<A> implements
   }
 
   // Foldable
-  abstract reduce<B>(reducer: Reducer<B, A>, initVal: B): B;
-  'fantasy-land/reduce'<B>(reducer: Reducer<B, A>, initVal: B): B {
+  abstract reduce<B>(reducer: Reducer<A, B>, initVal: B): B;
+  'fantasy-land/reduce'<B>(reducer: Reducer<A, B>, initVal: B): B {
     return this.reduce(reducer, initVal);
   }
 }
@@ -146,7 +146,7 @@ export class Just<A> extends Maybe<A> {
     // TODO 可能会报错
     return (this._value as any).concat(that);
   }
-  reduce<B>(reducer: Reducer<B, A>, initVal: B): B {
+  reduce<B>(reducer: Reducer<A, B>, initVal: B): B {
     return reducer(initVal, this._value);
   }
 
@@ -196,7 +196,7 @@ export class Nothing<A> extends Maybe<A> {
     return Nothing._nothing;
   }
 
-  reduce<B>(reducer: Reducer<B, A>, initVal: B): B {
+  reduce<B>(reducer: Reducer<A, B>, initVal: B): B {
     return initVal;
   }
 }

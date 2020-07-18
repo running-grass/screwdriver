@@ -17,10 +17,14 @@ export interface Category<A> extends Semigroupoid<A, A>, FantasyCategory<A> {
   id(): Mapper<Category<A>, Category<A>>
 }
 
+export interface Identity<A> extends Mapper<A, A> {
+  (x: A): A
+}
+
 /** 
  * 返回参数自身
  * @category 常用函数
  */
-export function id<A>(f: Category<A>): Category<A> {
-  return f;
+export const id: Identity<any> = <A>(x: A): A => {
+  return x;
 }

@@ -1,8 +1,16 @@
 import './naitve';
 
 export {
-  default as add
+  default as add,
+  inc,
+  dec,
 } from './add';
+
+export {
+  xwrap,
+  xmap,
+  transduce,
+} from './type/Transformer'
 
 export {
   flatten,

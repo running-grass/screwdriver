@@ -9,6 +9,7 @@ import {
   map,
   Reducer,
 } from "..";
+import { Foldable } from "../typeclass/Foldable";
 
 // 定义接口
 declare global {
@@ -17,18 +18,16 @@ declare global {
    * 对原生对象Array的扩展
    * @template T
    */
-  interface Array<T> extends Functor<T>, Flattenable<T> {
+  interface Array<T> extends Functor<T>, Flattenable<T>, Foldable<T> {
     'fantasy-land/map'<B>(mapper: Mapper<T, B>): Array<B>;
     map<B>(mapper: Mapper<T, B>): Array<B>;
     flatten(): Array<T>;
     reduce<B>(reducer: Reducer<B, T>, initVal: B): B;
   }
 
-  interface Function extends Semigroupoid<any, any>, Category<any> {
+  interface Function extends Semigroupoid<any, any> {
     'fantasy-land/compose'(f: Function): Function;
     compose(f: Function): Function;
-    'fantasy-land/id'(): Mapper<Function, Function>;
-    id(): Mapper<Function, Function>;
   }
 }
 
@@ -59,10 +58,4 @@ Function.prototype["fantasy-land/compose"] = function (f: Function): Function {
 }
 Function.prototype.compose = function (f: Function): Function {
   return (x: any) => f(this(x));
-}
-Function.prototype.id = function (): Mapper<Function, Function> {
-  return Function.id();
-}
-Function.prototype["fantasy-land/id"] = function (): Mapper<Function, Function> {
-  return x => x
 }
