@@ -1,8 +1,36 @@
 import './naitve';
 
 export {
-  default as add
+  default as add,
+  inc,
+  dec,
 } from './add';
+
+export {
+  transduce,
+} from './transducers/transduce'
+export {
+  Transformer,
+} from './transducers/Transformer'
+export {
+  xwrap,
+} from './transducers/XWrap';
+export {
+  xmap,
+} from './transducers/XMap';
+export {
+  xfilter
+} from './transducers/XFilter'
+export {
+  xtap,
+  xlog,
+} from './transducers/XTap'
+export {
+  xtake,
+} from './transducers/XTake'
+export {
+  xdrop,
+} from './transducers/XDrop'
 
 export {
   flatten,
@@ -48,11 +76,20 @@ export {
   invert,
 } from './typeclass/Group'
 
+export {
+  Foldable,
+  reduce,
+} from './typeclass/Foldable'
+
 // ----------------- 类 -------------------
 
 export {
   Mapper,
 } from './type/Mapper'
+
+export {
+  Reducer,
+} from './type/Reducer'
 
 export {
   Maybe,
