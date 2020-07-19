@@ -1,0 +1,12 @@
+git:
+  requireCleanWorkingDir: false
+github:
+  release: true
+hooks:
+  before:init:
+    - yarn test
+    - yarn doc
+  after:bump:
+    - npm run build
+  after:git:release: echo After git push, before github release
+  after:release: echo Successfully released ${name} v${version} to ${repo.repository}.

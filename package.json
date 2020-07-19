@@ -19,7 +19,8 @@
     "doc": "typedoc",
     "build": "yarn build:es && yarn build:umd",
     "build:es": "babel src --out-dir es --extensions '.ts'",
-    "build:umd": "babel src --out-dir umd --extensions '.ts' --env-name umd"
+    "build:umd": "babel src --out-dir umd --extensions '.ts' --env-name umd",
+    "release": "release-it"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
@@ -28,6 +29,7 @@
     "@types/jest": "^26.0.4",
     "cz-conventional-changelog": "^3.2.0",
     "jest": "^26.1.0",
+    "release-it": "^13.6.5",
     "ts-jest": "^26.1.1",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
@@ -38,7 +40,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
 }
