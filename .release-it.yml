@@ -1,11 +1,11 @@
-# git:
-  # requireCleanWorkingDir: true
-# github:
-  # release: true
+git:
+  requireCleanWorkingDir: false
+github:
+  release: true
 hooks:
-  # before:init:
-    # - yarn test
-    # - yarn doc
+  before:init:
+    - yarn test
+    - yarn doc
   after:bump:
     - yarn build
   after:git:release: echo After git push, before github release
