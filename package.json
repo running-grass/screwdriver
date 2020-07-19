@@ -3,7 +3,8 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "build": "tsc --build packages/screwdriver-js/tsconfig.json"
   },
   "devDependencies": {
     "@types/jest": "^26.0.4",
