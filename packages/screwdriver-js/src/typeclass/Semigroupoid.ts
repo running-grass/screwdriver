@@ -28,7 +28,17 @@ export function compose(f: any, ...fns: any[]): any {
     throw new Error("compose的参数至少为两个");
   }
   if (fnLen === 1) {
-    return fns[0].compose(f);
+    let ret
+    let init = fns[0];
+    if (init.compose) {
+      ret = init.compose(f)
+    } else if (typeof f === 'function' && typeof init === 'function') {
+      ret = (...x: any[]) => f(init(...x))
+    } else {
+      throw new Error("参数类型不能进行compose");
+    }
+
+    return ret
   }
 
   return reduce(compose, fns[0], fns.slice(1));

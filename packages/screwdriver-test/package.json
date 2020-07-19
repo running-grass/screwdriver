@@ -5,6 +5,7 @@
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "homepage": "https://github.com/screwdriver-js/screwdriver#readme",
   "license": "ISC",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/screwdriver-js/screwdriver.git"

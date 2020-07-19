@@ -8,19 +8,26 @@ export {
 
 export {
   transduce,
-} from './transducer/transduce'
+} from './transducers/transduce'
 export {
   Transformer,
-} from './transducer/Transformer'
+} from './transducers/Transformer'
 export {
   xwrap,
-} from './transducer/XWrap';
+} from './transducers/XWrap';
 export {
   xmap,
-} from './transducer/XMap';
+} from './transducers/XMap';
 export {
   xfilter
-} from './transducer/XFilter'
+} from './transducers/XFilter'
+export {
+  xtap,
+  xlog,
+} from './transducers/XTap'
+export {
+  xtake,
+} from './transducers/XTake'
 
 export {
   flatten,
