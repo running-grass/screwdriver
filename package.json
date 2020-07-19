@@ -1,6 +1,6 @@
 {
   "name": "screwdriver-js",
-  "version": "0.0.7-alpha.0",
+  "version": "0.0.7",
   "license": "ISC",
   "author": "奔跑的小草 <running-grass@foxmail.com>",
   "main": "es/index.ts",
