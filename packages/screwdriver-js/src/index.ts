@@ -28,6 +28,9 @@ export {
 export {
   xtake,
 } from './transducers/XTake'
+export {
+  xdrop,
+} from './transducers/XDrop'
 
 export {
   flatten,
