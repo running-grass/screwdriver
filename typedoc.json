@@ -1,9 +1,10 @@
 {
   "inputFiles": [
-    "./packages/screwdriver-js/src/type"
+    "src"
   ],
   "exclude": [
-    "__tests__/**"
+    "__tests__/**",
+    "example/**"
   ],
   "mode": "file",
   "out": "docs"

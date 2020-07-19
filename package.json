@@ -22,6 +22,7 @@
     "build:umd": "babel src --out-dir umd --extensions '.ts' --env-name umd",
     "release": "release-it"
   },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/plugin-transform-modules-umd": "^7.10.4",
@@ -39,7 +40,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {},
-  "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
+  }
 }

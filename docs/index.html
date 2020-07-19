@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>screwdriver-demo</title>
-	<meta name="description" content="Documentation for screwdriver-demo">
+	<title>screwdriver-js</title>
+	<meta name="description" content="Documentation for screwdriver-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">screwdriver-demo</a>
+					<a href="index.html" class="title">screwdriver-js</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,7 +56,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1>screwdriver-demo</h1>
+			<h1>screwdriver-js</h1>
 		</div>
 	</div>
 </header>
@@ -64,25 +64,58 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#screwdriver-demo" id="screwdriver-demo" style="color: inherit; text-decoration: none;">
-					<h1>screwdriver-demo</h1>
+				<a href="#screwdriver" id="screwdriver" style="color: inherit; text-decoration: none;">
+					<h1>Screwdriver</h1>
 				</a>
-				<a href="#project-setup" id="project-setup" style="color: inherit; text-decoration: none;">
-					<h2>Project setup</h2>
+				<p>一个灵巧的js类库</p>
+				<p>一共分为三个子项目</p>
+				<ul>
+					<li>Screwdriver-js 类库的源码</li>
+					<li>screwdriver-test 编写的测试用例，主要在node下进行测试</li>
+					<li>screwdriver-demo 写的demo，方便在浏览器上面进行debug</li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
 				</a>
-				<pre><code>yarn <span class="hljs-keyword">install</span></code></pre>
-				<a href="#compiles-and-hot-reloads-for-development" id="compiles-and-hot-reloads-for-development" style="color: inherit; text-decoration: none;">
-					<h3>Compiles and hot-reloads for development</h3>
+				<pre><code>yarn <span class="hljs-keyword">add</span><span class="bash"> screwdriver-js</span></code></pre>
+				<a href="#fantasy-land" id="fantasy-land" style="color: inherit; text-decoration: none;">
+					<h2>Fantasy-land</h2>
 				</a>
-				<pre><code><span class="hljs-attribute">yarn serve</span></code></pre>
-				<a href="#compiles-and-minifies-for-production" id="compiles-and-minifies-for-production" style="color: inherit; text-decoration: none;">
-					<h3>Compiles and minifies for production</h3>
+				<p>实现了一部分Fantasy-land中的类型类</p>
+				<ul>
+					<li>Maybe<ul>
+							<li>Functor</li>
+							<li>Apply</li>
+							<li>Applicative</li>
+							<li>Foldable</li>
+						</ul>
+					</li>
+					<li>Array<ul>
+							<li>Functor</li>
+							<li>Foldable</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#主要函数" id="主要函数" style="color: inherit; text-decoration: none;">
+					<h2>主要函数</h2>
 				</a>
-				<pre><code><span class="hljs-attribute">yarn build</span></code></pre>
-				<a href="#customize-configuration" id="customize-configuration" style="color: inherit; text-decoration: none;">
-					<h3>Customize configuration</h3>
+				<ul>
+					<li>map</li>
+					<li>compose</li>
+					<li>reduce</li>
+				</ul>
+				<a href="#transducers" id="transducers" style="color: inherit; text-decoration: none;">
+					<h2>Transducers</h2>
 				</a>
-				<p>See <a href="https://cli.vuejs.org/config/">Configuration Reference</a>.</p>
+				<p>遵循了<code>transducers-js</code>中的<a href="https://github.com/cognitect-labs/transducers-js#the-transducer-protocol">The Transducer Protocol</a>
+				目前支持的操作</p>
+				<ul>
+					<li>xtap</li>
+					<li>xmap</li>
+					<li>xfilter</li>
+					<li>xtake</li>
+					<li>xdrop</li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
