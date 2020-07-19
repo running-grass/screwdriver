@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
+    "module": "AMD",
+    "moduleResolution": "Node",
     "outDir": "dist",
-    "sourceMap": true
+    "outFile": "dist/screwdriver-js.amd.js",
+    "sourceMap": true,
   }
 }

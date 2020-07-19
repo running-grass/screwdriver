@@ -6,6 +6,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "src/index.ts",
+  "unpkg": "dist/screwdriver-js.amd.js",
   "scripts": {
     "test": "exit 0"
   },
