@@ -1,16 +1,37 @@
 {
-  "name": "screwdriver",
-  "private": false,
+  "name": "screwdriver-js",
+  "version": "0.0.7-alpha.0",
+  "license": "ISC",
+  "author": "奔跑的小草 <running-grass@foxmail.com>",
+  "main": "es/index.ts",
+  "types": "src/index.ts",
+  "module": "es/index.js",
+  "unpkg": "umd/index.js",
+  "jsdelivr": "umd/index.js",
+  "files": [
+    "src",
+    "dist",
+    "es",
+    "umd"
+  ],
   "scripts": {
     "test": "jest",
     "doc": "typedoc",
-    "build": "tsc --build packages/screwdriver-js/tsconfig.json"
+    "build": "yarn build:es && yarn build:umd",
+    "build:es": "babel src --out-dir es --extensions '.ts'",
+    "build:umd": "babel src --out-dir umd --extensions '.ts' --env-name umd",
+    "release": "dotenv release-it"
   },
+  "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/plugin-transform-modules-umd": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^26.0.4",
     "cz-conventional-changelog": "^3.2.0",
-    "lerna": "^3.22.1",
+    "dotenv-cli": "^3.2.0",
     "jest": "^26.1.0",
+    "release-it": "^13.6.5",
     "ts-jest": "^26.1.1",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
@@ -20,6 +41,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "dependencies": {}
+  }
 }

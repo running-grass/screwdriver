@@ -1,4 +1,4 @@
-import { flatten } from "screwdriver-js"
+import { flatten } from "../src"
 
 test('test array for nest', () => {
   expect([].flatten()).toEqual([])

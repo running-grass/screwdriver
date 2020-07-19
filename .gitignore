@@ -2,3 +2,11 @@ node_modules/
 .vscode
 .DS_Store
 yarn-error.log
+
+## 隐私文件
+.env
+
+## out files
+dist
+es
+umd

@@ -1,0 +1,22 @@
+{
+  "moduleId": "screwdriver-js",
+  "presets": [
+    [ "@babel/preset-typescript" ]
+  ],
+  "only": [
+    "./src"
+  ],
+  "env": {
+    "es": {},
+    "umd":{
+      "plugins": [
+        ["@babel/plugin-transform-modules-umd", {
+          "globals": {
+            "screwdriver-js": "S"
+          },
+          "exactGlobals": true
+        }]
+      ]
+    }
+  }
+}

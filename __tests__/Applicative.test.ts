@@ -1,4 +1,4 @@
-import { maybe, Maybe, Mapper } from "screwdriver-js";
+import { maybe, Maybe, Mapper } from "../src";
 
 
 describe("test Applicative laws by Maybe", () => {
