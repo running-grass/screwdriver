@@ -1,13 +1,13 @@
 {
   "name": "screwdriver-demo",
-  "version": "0.0.4-alpha.0",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "screwdriver-js": "^0.0.4-alpha.0",
+    "screwdriver-js": "^0.0.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {
