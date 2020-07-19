@@ -1,6 +1,15 @@
 {
-  "name": "screwdriver",
-  "private": false,
+  "name": "screwdriver-js",
+  "version": "0.0.6",
+  "license": "ISC",
+  "author": "奔跑的小草 <running-grass@foxmail.com>",
+  "main": "src/index.ts",
+  "unpkg": "dist/index.js",
+  "jsdelivr": "dist/index.js",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "doc": "typedoc",
@@ -9,7 +18,6 @@
   "devDependencies": {
     "@types/jest": "^26.0.4",
     "cz-conventional-changelog": "^3.2.0",
-    "lerna": "^3.22.1",
     "jest": "^26.1.0",
     "ts-jest": "^26.1.1",
     "typedoc": "^0.17.8",
@@ -21,5 +29,6 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "gitHead": "3c3f7311c30dd32ab1926a9f015c687eac1cedd3"
 }

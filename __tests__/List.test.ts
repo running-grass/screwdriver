@@ -1,4 +1,4 @@
-import { ArrayList, map } from "screwdriver-js";
+import { ArrayList, map } from "../src";
 
 test("test map for List22", () => {
     let list = ArrayList.fromArray([1, 2]);

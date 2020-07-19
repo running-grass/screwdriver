@@ -1,4 +1,4 @@
-import { SingleLinked, map } from "screwdriver-js";
+import { SingleLinked, map } from "../src";
 
 test("test linked", () => {
     const l1 = SingleLinked.fromArray([2, 1, 4]);

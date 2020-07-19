@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "umd",
-    "moduleResolution": "Node",
-    "outDir": "dist",
-    // "outFile": "dist/screwdriver-js.amd.js",
-    "sourceMap": true,
-  }
-}

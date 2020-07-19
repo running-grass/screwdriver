@@ -3,7 +3,7 @@
     "./packages/screwdriver-js/src/type"
   ],
   "exclude": [
-    "**/__tests__/**"
+    "__tests__/**"
   ],
   "mode": "file",
   "out": "docs"

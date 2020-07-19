@@ -1,4 +1,4 @@
-import { Maybe, just, nothing, maybe } from "screwdriver-js";
+import { Maybe, just, nothing, maybe } from "../src";
 
 
 test("test maybe new", () => {

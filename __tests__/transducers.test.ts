@@ -1,5 +1,4 @@
-import { xmap, inc, transduce, add, xfilter, compose, xtap, xdrop } from "screwdriver-js"
-import { xtake } from "screwdriver-js/src/transducers/XTake";
+import { xmap, inc, xfilter, transduce, add, compose, xtake, xdrop } from "../src";
 
 describe("test array", () => {
   const m1 = xmap(inc);

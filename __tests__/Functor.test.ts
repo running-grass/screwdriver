@@ -1,4 +1,4 @@
-import { map, Mapper, maybe } from "screwdriver-js";
+import { map, Mapper, maybe } from "../src";
 
 const id: Mapper<any, any> = a => a;
 
