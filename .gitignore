@@ -3,6 +3,9 @@ node_modules/
 .DS_Store
 yarn-error.log
 
+## 隐私文件
+.env
+
 ## out files
 dist
 es
