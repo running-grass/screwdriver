@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import 'screwdriver-js/install';
+import * as S from 'screwdriver-js';
 
 Vue.config.productionTip = false
 

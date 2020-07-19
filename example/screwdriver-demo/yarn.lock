@@ -5385,6 +5385,11 @@ schema-utils@^2.0.0, schema-utils@^2.5.0, schema-utils@^2.6.6, schema-utils@^2.7
     ajv "^6.12.2"
     ajv-keywords "^3.4.1"
 
+screwdriver-js@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/screwdriver-js/-/screwdriver-js-0.0.6.tgz#b0945ad515413fd2b966e000dd3d4947723e90f0"
+  integrity sha512-ou7h/U8+bYTqZK6g5qO8u9Afl6k+Nw0u8is+cIVy7F9T/3rGK8f9wqaMULxmFkyXijpLcjFTA0E28HFbsVOZHg==
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npm.taobao.org/select-hose/download/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
