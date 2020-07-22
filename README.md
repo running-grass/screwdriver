@@ -1,6 +1,8 @@
 # Screwdriver
 一个灵巧的js类库
 
+[API文档](https://screwdriver-js.github.io/screwdriver/index.html)
+
 一共分为三个子项目
 - Screwdriver-js 类库的源码
 - screwdriver-test 编写的测试用例，主要在node下进行测试

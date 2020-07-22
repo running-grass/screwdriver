@@ -1,5 +1,7 @@
 import './naitve';
 
+export * from './array'
+
 export {
   default as add,
   inc,
@@ -113,3 +115,5 @@ export {
   FiniteContainer,
   Collection
 } from './type/Collection'
+
+
